@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Salama SchoolTrack - Smart Fleet, Safe Journeys.">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="SchoolTrack">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Salama SchoolTrack</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script src="https://js.pusher.com/8.1.0/pusher.min.js"></script>
+
+  <style>
+    body {
+      background-color: #0A0A0A; /* Matches AppTheme.black */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 3px solid #FFF;
+      border-bottom-color: #FF6B00; /* Matches AppTheme.primary */
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+    @keyframes rotation {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading-indicator">
+    <span class="loader"></span>
+  </div>
+
+  <script src="flutter_bootstrap.js" async></script>
+
+  <script>
+    // Optional: Hide the HTML loader once Flutter starts rendering
+    window.addEventListener('flutter-first-frame', function() {
+      var loader = document.getElementById('loading-indicator');
+      if (loader) loader.remove();
+    });
+  </script>
+</body>
+</html>

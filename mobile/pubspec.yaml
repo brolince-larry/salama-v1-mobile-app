@@ -1,0 +1,53 @@
+name: schooltrack_app
+description: SchoolTrack — Smart Fleet, Safe Journeys
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── State management ───────────────────────────────────────────────────────
+  flutter_riverpod: ^2.5.1
+
+  # ── HTTP ───────────────────────────────────────────────────────────────────
+  dio: ^5.4.3
+  http: ^1.2.1                    # used for Reverb channel auth POST
+  # ── Push Notifications ─────────────────────────────────────────────────────
+  firebase_core: ^3.0.0
+  firebase_messaging: ^15.0.0
+  flutter_local_notifications: ^17.1.0 # Required to show the "pop" in foreground
+
+  # ── Secure storage ─────────────────────────────────────────────────────────
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.2.3
+
+  # ── Navigation ─────────────────────────────────────────────────────────────
+  go_router: ^14.0.0
+
+  # ── WebSocket — single package, works on Android + iOS + Web ──────────────
+  # web_socket_channel uses dart:io on mobile and dart:html on web.
+  # No platform-specific code needed. No host restrictions.
+  web_socket_channel: ^3.0.0
+
+  # ── Location ───────────────────────────────────────────────────────────────
+  geolocator: ^12.0.0
+
+  # ── Icons ──────────────────────────────────────────────────────────────────
+  cupertino_icons: ^1.0.6
+  url_launcher: ^6.3.2
+  image_picker: ^1.2.1
+  mapbox_maps_flutter: ^2.3.0   # mobile only
+  flutter_map: ^8.2.2           # web + desktop
+  latlong2: ^0.9.1              # LatLng for flutter_map
+  flutter_map_cancellable_tile_provider: ^3.0.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
